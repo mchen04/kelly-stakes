@@ -2,6 +2,22 @@
 
 The writable survivor is [mchen04/kelly-stakes](https://github.com/mchen04/kelly-stakes), with current origin `https://github.com/mchen04/kelly-stakes.git` and GitHub default branch `consolidate/kelly-monorepo`. Forge renamed the surviving `kelly-stakes-web` repository and selected the consolidation branch as default after successful build/publish readback. No merge into `main` or deployment accompanied those changes; `main` remains at baseline `3584be811b0f0938062c4b6a3160b29c9e548373`.
 
+## Current cleanup state and human handoff
+
+The consolidated survivor is pushed and renamed. Forge independently verified the remote bytes of all four preserved bundles and ran `git bundle verify`; receipts are in `/Users/michaelchen/GoalRuns/kelly/t_05cbc7e9/evidence/supervisor-preservation.json`.
+
+Forge successfully moved exactly the three legacy source clones to Trash. `evidence/trash-receipt.json` records each original source path as absent, its Trash destination as present and its origin as preserved. All three legacy GitHub repositories remain:
+
+| Legacy GitHub repository | Local clone now in Trash | Remote status |
+| --- | --- | --- |
+| `mchen04/kelly-stakes-ios` | `/Users/michaelchen/.Trash/kelly-stakes-ios-t_05cbc7e9` | Remains; deletion permission-blocked |
+| `mchen04/kelly_criterion_google_extension` | `/Users/michaelchen/.Trash/kelly_criterion_google_extension-t_05cbc7e9` | Remains; deletion permission-blocked |
+| `mchen04/oddsjam-kelly-extension` | `/Users/michaelchen/.Trash/oddsjam-kelly-extension-t_05cbc7e9` | Remains; deletion permission-blocked |
+
+Forge's deletion attempt using the logged-in `gh` CLI returned HTTP 403, “Must have admin rights”; the API explicitly required `delete_repo` scope. Forge's live header probes on both mbp-old and mbp-main reported `gist`, `read:org`, `repo`, `workflow`, without `delete_repo`. These are Forge's reported observations, not new Codex deletion attempts or credential probes. Remote cleanup remains a human-handoff limitation. No further deletion attempts or token, account or OAuth changes are part of this stage. Local Trash moves are complete; do not repeat them or treat the remote repositories as removed. The survivor must never be deleted. No merge or deployment occurred.
+
+## Historical source provenance
+
 The following names, origins and revisions describe the historical sources, not current repository configuration. Three read-only sources were compared against the actual web tree:
 
 | Original repository | Source revision | Active destination |
@@ -11,7 +27,7 @@ The following names, origins and revisions describe the historical sources, not 
 | `mchen04/kelly_criterion_google_extension` | `0afae754ae37bcdcaab3413fae9e3be0a642e437` | `extensions/calculator` |
 | `mchen04/oddsjam-kelly-extension` | `f9c066fcaf6d16aab8afbe017b7d202e797f1fbf` | `extensions/oddsjam` |
 
-Source clone paths are `/Users/michaelchen/GoalRuns/kelly/t_05cbc7e9/sources/<repository-name>`. Historical origins are `https://github.com/mchen04/<repository-name>.git`. Archive paths, bundle bytes and source/metadata snapshots retain those original identities. The survivor checkout is `/Users/michaelchen/Projects/Apps/kelly-stakes`; it must never be deleted.
+Original source clone paths were `/Users/michaelchen/GoalRuns/kelly/t_05cbc7e9/sources/<repository-name>`; the three clones are now at the exact Trash destinations above. Historical origins are `https://github.com/mchen04/<repository-name>.git`. Archive paths, bundle bytes and source/metadata snapshots retain those original identities. The survivor checkout is `/Users/michaelchen/Projects/Apps/kelly-stakes`; it must never be deleted.
 
 ## Preservation and organization
 
@@ -65,6 +81,6 @@ The fixture URL `https://fixture.oddsjam.com/kelly-task-fixture` was fulfilled l
 
 Codex performed no wagers, purchases, sign-ins, account changes, deployment, PR, merge, remote rename/deletion or Trash operations. Forge performed the survivor rename and default-branch selection described above. Only the existing `gh` login for `mchen04` supplied Codex's project GitHub access, through safe-push's restoring wrapper. Public npm registry downloads used no requested credentials. Credential searches were not performed; leak-prevention scanning was limited to project worktree/outgoing commits and public archived Git blobs, with five synthetic documentation findings explicitly reviewed.
 
-Existing GitHub history shows Vercel Production deployments. Root `vercel.json` disables `consolidate/kelly-monorepo` Git deployment using [Vercel's documented setting](https://vercel.com/docs/project-configuration/git-configuration); the block remains in place on the new default branch. The authorized documentation follow-up is pushed to that branch; no `main` push, merge or production deployment is authorized. Forge owns deletion of exactly the three superseded remotes/source clones after successful pushed readback. Bundle preservation and accepted local limitations are not reasons to delete the survivor or rerun exhaustive validation.
+Existing GitHub history shows Vercel Production deployments. Root `vercel.json` disables `consolidate/kelly-monorepo` Git deployment using [Vercel's documented setting](https://vercel.com/docs/project-configuration/git-configuration); the block remains in place on the new default branch. The authorized documentation follow-up is pushed to that branch; no `main` push, merge or production deployment is authorized. Local source clones have been Trashed by Forge; remote deletion remains permission-blocked as recorded above. Bundle preservation and accepted local limitations are not reasons to delete the survivor or rerun exhaustive validation.
 
 The original Codex-owned preview exited after the build/publish turn, as observed by Forge. Forge restarted preview at `http://127.0.0.1:4173/` in its own supervisor-owned process. Current service status is recorded outside Git in `evidence/server.json` and `HANDOFF.md`; Codex does not start or stop that process. Forge also independently observed `npm run build`, all four `npm test` checks and native `plutil` passing, and matched the published consolidation SHA. The documentation follow-up does not repeat checks of unchanged implementation or regenerate archives.
