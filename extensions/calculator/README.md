@@ -1,6 +1,6 @@
 # Calculator extension
 
-Part of [mchen04/kelly-stakes](https://github.com/mchen04/kelly-stakes), maintained on the default branch `consolidate/kelly-monorepo`.
+Part of [mchen04/kelly-stakes](https://github.com/mchen04/kelly-stakes). The canonical destination for the authorized squash publication is `main`; preparation uses `consolidate/kelly-monorepo`.
 
 Independent Manifest V3 popup named **Calculator Only**. It requests only `storage`, and does not depend on OddsJam. Original popup, stylesheet, icons, manifest identity, defaults and storage keys remain. The old README was copied from the OddsJam extension; that original is preserved in the bundle.
 

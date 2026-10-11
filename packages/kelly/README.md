@@ -1,6 +1,6 @@
 # Shared JavaScript Kelly helpers
 
-Part of [mchen04/kelly-stakes](https://github.com/mchen04/kelly-stakes), maintained on the default branch `consolidate/kelly-monorepo`.
+Part of [mchen04/kelly-stakes](https://github.com/mchen04/kelly-stakes). The canonical destination for the authorized squash publication is `main`; preparation uses `consolidate/kelly-monorepo`.
 
 `@kelly-stakes/kelly` is a native ES module with TypeScript declarations and no runtime dependencies. Hero/LiveDemo import its odds converter and Kelly fraction; both extension popups and the OddsJam worker import its converter and rounded probability helper. Extension builds bundle these imports locally.
 

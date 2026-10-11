@@ -1,7 +1,7 @@
 
 # OddsJam extension
 
-Part of [mchen04/kelly-stakes](https://github.com/mchen04/kelly-stakes), maintained on the default branch `consolidate/kelly-monorepo`.
+Part of [mchen04/kelly-stakes](https://github.com/mchen04/kelly-stakes). The canonical destination for the authorized squash publication is `main`; preparation uses `consolidate/kelly-monorepo`.
 
 Original Manifest V3 identity, popup layout, table processing, per-page settings, URL presets, worker/content scripts, stylesheet and icons are retained. Build the workspace imports into a self-contained extension:
 

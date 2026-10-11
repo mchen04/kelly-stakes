@@ -9,7 +9,8 @@
   "outputDirectory": "apps/web/dist",
   "git": {
     "deploymentEnabled": {
-      "consolidate/kelly-monorepo": false
+      "consolidate/kelly-monorepo": false,
+      "main": false
     }
   }
 }

@@ -1,6 +1,6 @@
 # Kelly Stakes web
 
-Part of [mchen04/kelly-stakes](https://github.com/mchen04/kelly-stakes), maintained on the default branch `consolidate/kelly-monorepo`.
+Part of [mchen04/kelly-stakes](https://github.com/mchen04/kelly-stakes). The canonical destination for the authorized squash publication is `main`; preparation uses `consolidate/kelly-monorepo`.
 
 Existing React 18, TypeScript, Vite 6, Tailwind CSS 3, React Router and Framer Motion website. All 16 original components remain, including currently unused `HowItWorks.tsx`. Hero and LiveDemo use the workspace odds/Kelly helpers, retaining their UI and amount rounding.
 
