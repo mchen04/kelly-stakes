@@ -1,0 +1,7 @@
+The bundle contains these 3 refs:
+f9c066fcaf6d16aab8afbe017b7d202e797f1fbf refs/heads/main
+f9c066fcaf6d16aab8afbe017b7d202e797f1fbf refs/preserved/heads/main
+f9c066fcaf6d16aab8afbe017b7d202e797f1fbf HEAD
+The bundle records a complete history.
+The bundle uses this hash algorithm: sha1
+/Users/michaelchen/Projects/Apps/kelly-stakes/archives/oddsjam-kelly-extension/oddsjam-kelly-extension.bundle is okay

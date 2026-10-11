@@ -1,165 +1,45 @@
-# Kelly Stakes - Professional Bet Calculator
+# Kelly Stakes
 
-A modern, responsive web application for calculating optimal bet sizes using the Kelly Criterion mathematical formula. Built with React, TypeScript, and Tailwind CSS.
+One repository for the existing website, native iOS app, standalone calculator extension and OddsJam extension. The survivor remains [mchen04/kelly-stakes-web](https://github.com/mchen04/kelly-stakes-web), on `consolidate/kelly-monorepo`.
 
-![Kelly Stakes Logo](public/vite.svg)
+| Component | Source | Existing capability |
+| --- | --- | --- |
+| [Web](apps/web/README.md) | `apps/web` | React/Vite site, two American-odds calculators, education, help/privacy/terms routes |
+| [iOS](apps/ios/README.md) | `apps/ios` | SwiftUI American/decimal calculator, local presets, age gate, StoreKit preset-slot flow |
+| [Calculator extension](extensions/calculator/README.md) | `extensions/calculator` | Manual American-odds sizing popup; local settings |
+| [OddsJam extension](extensions/oddsjam/README.md) | `extensions/oddsjam` | Manual sizing, table column injection, per-page automation and URL presets |
+| [JavaScript math](packages/kelly/README.md) | `packages/kelly` | Shared odds helpers and web Kelly fraction |
+| [Preservation](archives/README.md) | `archives` | Baseline bundles, refs, public metadata, inventories/checksums |
 
-## 🎯 Overview
+## Local setup
 
-Kelly Stakes is a professional-grade bet calculator that helps users determine optimal position sizes for sports betting, trading, and investment decisions using the proven Kelly Criterion formula. The application features a sleek, modern interface with real-time calculations and educational resources.
+Use Node.js 20+ and npm workspaces. Exercised on Node 26.3.1/npm 11.17.0 on macOS. Existing resolved web dependency versions are retained; esbuild 0.25.8 is now an explicit extension build dependency.
 
-## ✨ Features
-
-- **Real-time Kelly Criterion Calculator**: Interactive calculator with live updates
-- **Multiple Odds Formats**: Support for American, decimal, and fractional odds
-- **Educational Content**: Comprehensive guide to understanding the Kelly Criterion
-- **Responsive Design**: Fully optimized for desktop, tablet, and mobile devices
-- **Professional UI**: Modern, dark-themed interface with smooth animations
-- **Multi-bet Support**: Calculate optimal stakes for multiple simultaneous bets
-- **Use Case Examples**: Real-world scenarios for sports betting, trading, and investing
-
-## 🚀 Tech Stack
-
-- **Frontend Framework**: React 18.3
-- **Language**: TypeScript 5.5
-- **Styling**: Tailwind CSS 3.4
-- **Build Tool**: Vite 6.3
-- **Routing**: React Router DOM 6.30
-- **Animations**: Framer Motion 12.23
-- **Icons**: Lucide React 0.344
-- **Additional Libraries**:
-  - React Spring for physics-based animations
-  - React Intersection Observer for scroll-triggered effects
-
-## 📁 Project Structure
-
-```
-kelly-stakes-website/
-├── public/              # Static assets
-├── src/
-│   ├── components/      # React components
-│   │   ├── Education.tsx    # Educational content about Kelly Criterion
-│   │   ├── FAQ.tsx          # Frequently asked questions
-│   │   ├── Features.tsx     # App features showcase
-│   │   ├── FinalCTA.tsx     # Call-to-action section
-│   │   ├── Footer.tsx       # Site footer
-│   │   ├── Help.tsx         # Help center page
-│   │   ├── Hero.tsx         # Landing page hero section
-│   │   ├── KellyExplainer.tsx # Kelly Criterion explanation
-│   │   ├── LiveDemo.tsx     # Interactive calculator demo
-│   │   ├── Navigation.tsx   # Site navigation
-│   │   ├── Pricing.tsx      # Pricing information
-│   │   ├── PrivacyPolicy.tsx # Privacy policy page
-│   │   ├── TermsOfService.tsx # Terms of service page
-│   │   ├── Testimonials.tsx # User testimonials
-│   │   └── UseCases.tsx     # Use case examples
-│   ├── App.tsx         # Main application component
-│   ├── main.tsx        # Application entry point
-│   └── index.css       # Global styles
-├── index.html          # HTML entry point
-├── package.json        # Project dependencies
-├── tailwind.config.js  # Tailwind CSS configuration
-├── tsconfig.json       # TypeScript configuration
-├── vite.config.ts      # Vite configuration
-└── vercel.json         # Vercel deployment configuration
+```sh
+npm ci
+npm run dev -- --host 127.0.0.1 --port 5173
 ```
 
-## 🛠️ Installation
+Open `http://127.0.0.1:5173`. Other commands:
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/kelly-stakes-website.git
-   cd kelly-stakes-website
-   ```
+```sh
+npm run build                  # web + both loadable extension directories
+npm run build:web              # apps/web/dist
+npm run build:extensions       # dist/extensions/{calculator,oddsjam}
+npm run preview -- --host 127.0.0.1 --port 4173
+npm test                       # shared JS math regressions
+npm run lint                   # existing ESLint check; baseline failure
+npm run typecheck              # existing strict TS configs; baseline errors
+```
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+Load each generated extension directory separately using **Load unpacked** in Chrome's extension developer page. Build first: source folders contain workspace imports. iOS remains an independent Xcode project at `apps/ios/KellyCriterion.xcodeproj`; no JavaScript bridge or Swift dependency migration is needed.
 
-3. **Start development server**
-   ```bash
-   npm run dev
-   ```
+## Validation and limits
 
-4. **Open your browser**
-   Navigate to `http://localhost:5173`
+[Consolidation notes](docs/consolidation.md) describe exercised behavior, inherited defects and preservation choices. Local checks do not establish live OddsJam compatibility, App Store readiness, device behavior or purchase behavior. Existing website marketing and links remain legacy content; documentation describes actual implemented capabilities. No multi-bet, history, cloud service or new betting feature was added.
 
-## 📜 Available Scripts
+Generated outputs, dependencies, Xcode user/build state and environment files are ignored. Useful native calculation and UI tests remain. Only the assertion-free generated launch screenshot test was omitted from the active app; its original is in the bundle.
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build locally
-- `npm run lint` - Run ESLint for code quality
+## Deployment boundary
 
-## 🚀 Deployment
-
-The application is configured for deployment on Vercel with automatic routing support for React Router.
-
-1. **Build the project**
-   ```bash
-   npm run build
-   ```
-
-2. **Deploy to Vercel**
-   ```bash
-   vercel
-   ```
-
-The `vercel.json` configuration file ensures proper routing for single-page application behavior.
-
-## 📱 Features in Detail
-
-### Kelly Criterion Calculator
-- Input given odds and your estimated true odds
-- Real-time calculation of optimal bet size
-- Visual representation of potential outcomes
-- Support for different bankroll sizes
-
-### Educational Resources
-- Comprehensive guide to the Kelly Criterion
-- Mathematical formula explanation
-- Risk management principles
-- Common mistakes to avoid
-
-### Professional Tools
-- Multi-bet calculator for portfolio management
-- Historical performance tracking
-- Risk assessment metrics
-- Bankroll management features
-
-## 🎨 Design Features
-
-- **Dark Theme**: Professional dark color scheme with high contrast
-- **Responsive Layout**: Mobile-first design approach
-- **Smooth Animations**: Framer Motion for fluid interactions
-- **Accessibility**: WCAG compliant with proper semantic HTML
-- **Performance**: Optimized with lazy loading and code splitting
-
-## 📧 Contact
-
-For support or inquiries: kellystakesapp@gmail.com
-
-## 📄 Legal
-
-- [Privacy Policy](/privacy)
-- [Terms of Service](/terms)
-- [Help Center](/help)
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is proprietary software. All rights reserved.
-
----
-
-Built with ❤️ by the Kelly Stakes team
+Root `vercel.json` retains SPA routing and points future builds at `apps/web/dist`. It disables Git deployment for `consolidate/kelly-monorepo` through [Vercel's branch setting](https://vercel.com/docs/project-configuration/git-configuration). No merge, deployment, rename or deletion is part of this task. Review future production configuration separately before merging. The web survivor must be retained.

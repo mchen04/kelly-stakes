@@ -12,6 +12,17 @@ dist
 dist-ssr
 *.local
 
+# Project credentials and native build/user state
+.env
+.env.*
+!.env.example
+.vercel/
+DerivedData/
+build/
+.build/
+*.xcuserstate
+xcuserdata/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

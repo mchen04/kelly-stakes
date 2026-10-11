@@ -1,3 +1,4 @@
+import { americanToDecimal, kellyFraction } from '@kelly-stakes/kelly';
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -11,30 +12,14 @@ const Hero = () => {
   const [optimalBet, setOptimalBet] = useState(909);
   const [animatedValue, setAnimatedValue] = useState(0);
 
-  // Convert American odds to decimal
-  const americanToDecimal = (odds) => {
-    if (typeof odds === 'string') {
-      const numOdds = parseInt(odds);
-      if (numOdds > 0) {
-        return (numOdds / 100) + 1;
-      } else {
-        return (100 / Math.abs(numOdds)) + 1;
-      }
-    }
-    return odds;
-  };
-
-  // Convert decimal odds to implied probability
-  const decimalToProb = (decimal) => 1 / decimal;
+  const decimalToProb = (decimal: number) => 1 / decimal;
 
   // Kelly Criterion calculation
   useEffect(() => {
     const givenDecimal = americanToDecimal(givenOdds);
     const trueDecimal = americanToDecimal(trueOdds);
-    const p = decimalToProb(trueDecimal); // Your true probability
-    const q = 1 - p;
-    const b = givenDecimal - 1; // Payout odds
-    const kelly = ((b * p - q) / b) * 100;
+    const fraction = kellyFraction(givenDecimal, 1 / trueDecimal);
+    const kelly = fraction * 100;
     const betSize = Math.round(bankroll * (kelly / 100));
     setOptimalBet(Math.max(0, betSize));
   }, [givenOdds, trueOdds, bankroll]);

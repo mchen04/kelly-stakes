@@ -1,3 +1,4 @@
+import { americanToDecimal, kellyFraction } from '@kelly-stakes/kelly';
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -20,37 +21,11 @@ const LiveDemo = () => {
   const [kellyMultiplier, setKellyMultiplier] = useState(0.25); // Fractional Kelly (25%)
   const [isCalculating, setIsCalculating] = useState(false);
   
-  // Convert American odds to decimal
-  const americanToDecimal = (odds) => {
-    if (typeof odds === 'string') {
-      const numOdds = parseInt(odds);
-      if (numOdds > 0) {
-        return (numOdds / 100) + 1;
-      } else {
-        return (100 / Math.abs(numOdds)) + 1;
-      }
-    }
-    return odds;
-  };
-
-  // Convert decimal to American odds
-  const decimalToAmerican = (decimal) => {
-    if (decimal >= 2) {
-      return `+${Math.round((decimal - 1) * 100)}`;
-    } else {
-      return `${Math.round(-100 / (decimal - 1))}`;
-    }
-  };
-
   // Kelly calculation
   const calculateKelly = () => {
     const givenDecimal = americanToDecimal(givenOdds);
     const trueDecimal = americanToDecimal(trueOdds);
-    const p = 1 / trueDecimal; // Your true probability
-    const q = 1 - p;
-    const b = givenDecimal - 1;
-    const kelly = ((b * p - q) / b) * 100;
-    return Math.max(0, kelly);
+    return kellyFraction(givenDecimal, 1 / trueDecimal) * 100;
   };
 
   const fullKellyPercentage = calculateKelly();

@@ -1,0 +1,101 @@
+[
+  {
+    "id": 9001003091,
+    "node_id": "LA_kwDOPSgXR88AAAACGIBoUw",
+    "url": "https://api.github.com/repos/mchen04/kelly-stakes-web/labels/bug",
+    "name": "bug",
+    "color": "d73a4a",
+    "default": true,
+    "description": "Something isn't working",
+    "archived_at": null,
+    "archived_by": null
+  },
+  {
+    "id": 9001003098,
+    "node_id": "LA_kwDOPSgXR88AAAACGIBoWg",
+    "url": "https://api.github.com/repos/mchen04/kelly-stakes-web/labels/documentation",
+    "name": "documentation",
+    "color": "0075ca",
+    "default": true,
+    "description": "Improvements or additions to documentation",
+    "archived_at": null,
+    "archived_by": null
+  },
+  {
+    "id": 9001003107,
+    "node_id": "LA_kwDOPSgXR88AAAACGIBoYw",
+    "url": "https://api.github.com/repos/mchen04/kelly-stakes-web/labels/duplicate",
+    "name": "duplicate",
+    "color": "cfd3d7",
+    "default": true,
+    "description": "This issue or pull request already exists",
+    "archived_at": null,
+    "archived_by": null
+  },
+  {
+    "id": 9001003116,
+    "node_id": "LA_kwDOPSgXR88AAAACGIBobA",
+    "url": "https://api.github.com/repos/mchen04/kelly-stakes-web/labels/enhancement",
+    "name": "enhancement",
+    "color": "a2eeef",
+    "default": true,
+    "description": "New feature or request",
+    "archived_at": null,
+    "archived_by": null
+  },
+  {
+    "id": 9001003132,
+    "node_id": "LA_kwDOPSgXR88AAAACGIBofA",
+    "url": "https://api.github.com/repos/mchen04/kelly-stakes-web/labels/good%20first%20issue",
+    "name": "good first issue",
+    "color": "7057ff",
+    "default": true,
+    "description": "Good for newcomers",
+    "archived_at": null,
+    "archived_by": null
+  },
+  {
+    "id": 9001003125,
+    "node_id": "LA_kwDOPSgXR88AAAACGIBodQ",
+    "url": "https://api.github.com/repos/mchen04/kelly-stakes-web/labels/help%20wanted",
+    "name": "help wanted",
+    "color": "008672",
+    "default": true,
+    "description": "Extra attention is needed",
+    "archived_at": null,
+    "archived_by": null
+  },
+  {
+    "id": 9001003140,
+    "node_id": "LA_kwDOPSgXR88AAAACGIBohA",
+    "url": "https://api.github.com/repos/mchen04/kelly-stakes-web/labels/invalid",
+    "name": "invalid",
+    "color": "e4e669",
+    "default": true,
+    "description": "This doesn't seem right",
+    "archived_at": null,
+    "archived_by": null
+  },
+  {
+    "id": 9001003146,
+    "node_id": "LA_kwDOPSgXR88AAAACGIBoig",
+    "url": "https://api.github.com/repos/mchen04/kelly-stakes-web/labels/question",
+    "name": "question",
+    "color": "d876e3",
+    "default": true,
+    "description": "Further information is requested",
+    "archived_at": null,
+    "archived_by": null
+  },
+  {
+    "id": 9001003153,
+    "node_id": "LA_kwDOPSgXR88AAAACGIBokQ",
+    "url": "https://api.github.com/repos/mchen04/kelly-stakes-web/labels/wontfix",
+    "name": "wontfix",
+    "color": "ffffff",
+    "default": true,
+    "description": "This will not be worked on",
+    "archived_at": null,
+    "archived_by": null
+  }
+]

@@ -1,0 +1,4 @@
+3584be811b0f0938062c4b6a3160b29c9e548373 refs/heads/consolidate/kelly-monorepo
+3584be811b0f0938062c4b6a3160b29c9e548373 refs/heads/main
+3584be811b0f0938062c4b6a3160b29c9e548373 refs/remotes/origin/HEAD
+3584be811b0f0938062c4b6a3160b29c9e548373 refs/remotes/origin/main
