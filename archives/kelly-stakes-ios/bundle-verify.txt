@@ -1,0 +1,7 @@
+The bundle contains these 3 refs:
+dfe55d1f4623b5dfd8eda22ec8708b84a97bcb0c refs/heads/main
+dfe55d1f4623b5dfd8eda22ec8708b84a97bcb0c refs/preserved/heads/main
+dfe55d1f4623b5dfd8eda22ec8708b84a97bcb0c HEAD
+The bundle records a complete history.
+The bundle uses this hash algorithm: sha1
+/Users/michaelchen/Projects/Apps/kelly-stakes/archives/kelly-stakes-ios/kelly-stakes-ios.bundle is okay

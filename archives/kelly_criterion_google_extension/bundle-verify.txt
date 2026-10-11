@@ -1,0 +1,7 @@
+The bundle contains these 3 refs:
+0afae754ae37bcdcaab3413fae9e3be0a642e437 refs/heads/main
+0afae754ae37bcdcaab3413fae9e3be0a642e437 refs/preserved/heads/main
+0afae754ae37bcdcaab3413fae9e3be0a642e437 HEAD
+The bundle records a complete history.
+The bundle uses this hash algorithm: sha1
+/Users/michaelchen/Projects/Apps/kelly-stakes/archives/kelly_criterion_google_extension/kelly_criterion_google_extension.bundle is okay

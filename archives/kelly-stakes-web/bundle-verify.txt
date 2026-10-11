@@ -1,0 +1,8 @@
+The bundle contains these 4 refs:
+3584be811b0f0938062c4b6a3160b29c9e548373 refs/heads/main
+3584be811b0f0938062c4b6a3160b29c9e548373 refs/preserved/heads/consolidate/kelly-monorepo
+3584be811b0f0938062c4b6a3160b29c9e548373 refs/preserved/heads/main
+3584be811b0f0938062c4b6a3160b29c9e548373 HEAD
+The bundle records a complete history.
+The bundle uses this hash algorithm: sha1
+/Users/michaelchen/Projects/Apps/kelly-stakes/archives/kelly-stakes-web/kelly-stakes-web.bundle is okay
