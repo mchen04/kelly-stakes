@@ -1,5 +1,7 @@
 # Kelly Stakes iOS
 
+Part of [mchen04/kelly-stakes](https://github.com/mchen04/kelly-stakes), maintained on the default branch `consolidate/kelly-monorepo`.
+
 Native SwiftUI/Combine app with a Foundation calculator, UserDefaults presets and StoreKit 2. Project, shared scheme, StoreKit configuration, three referenced icon PNG filenames, colors, all 24 app Swift sources and useful unit/UI suites retain their relative layout. Bundle ID remains `com.michaelchen.kellystakes`.
 
 On a Mac with full Xcode, from the repository root:

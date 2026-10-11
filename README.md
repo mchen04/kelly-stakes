@@ -1,6 +1,6 @@
 # Kelly Stakes
 
-One repository for the existing website, native iOS app, standalone calculator extension and OddsJam extension. The survivor remains [mchen04/kelly-stakes-web](https://github.com/mchen04/kelly-stakes-web), on `consolidate/kelly-monorepo`.
+One repository for the existing website, native iOS app, standalone calculator extension and OddsJam extension: [mchen04/kelly-stakes](https://github.com/mchen04/kelly-stakes). Forge renamed the survivor from `kelly-stakes-web` and selected `consolidate/kelly-monorepo` as the GitHub default branch, so the repository root presents the consolidated project. No merge into `main` or deployment accompanied that change. Historical archives retain their original repository names and origins.
 
 | Component | Source | Existing capability |
 | --- | --- | --- |
@@ -42,4 +42,4 @@ Generated outputs, dependencies, Xcode user/build state and environment files ar
 
 ## Deployment boundary
 
-Root `vercel.json` retains SPA routing and points future builds at `apps/web/dist`. It disables Git deployment for `consolidate/kelly-monorepo` through [Vercel's branch setting](https://vercel.com/docs/project-configuration/git-configuration). No merge, deployment, rename or deletion is part of this task. Review future production configuration separately before merging. The web survivor must be retained.
+Root `vercel.json` retains SPA routing and points future builds at `apps/web/dist`. It disables Git deployment for `consolidate/kelly-monorepo` through [Vercel's branch setting](https://vercel.com/docs/project-configuration/git-configuration); that block remains in place after the default-branch selection. `main` remains at the original web baseline, with no merge or deployment. Review future production configuration separately before merging. Forge owns any later deletion of the three superseded repositories/source clones; the survivor must be retained.
